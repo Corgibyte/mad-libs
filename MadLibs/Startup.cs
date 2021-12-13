@@ -12,7 +12,7 @@ namespace MadLibs
 
     public Startup(IWebHostEnvironment env)
     {
-      var builder = new ConfigurationBuilder().setBasePath(env.ContentRootPath).AddEnvironmentVariables();
+      var builder = new ConfigurationBuilder().SetBasePath(env.ContentRootPath).AddEnvironmentVariables();
       Configuration = builder.Build();
     }
 

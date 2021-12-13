@@ -1,5 +1,6 @@
+using MadLibs.Models;
 using Microsoft.AspNetCore.Mvc;
-// using System.Web.Mvc;
+using Microsoft.AspNetCore.Http;
 
 namespace MadLibs.Controllers
 {
@@ -9,10 +10,10 @@ namespace MadLibs.Controllers
     public ActionResult Form() { return View(); }
 
     [Route("/madlib")]
-    public ActionResult MadLib(FormCollection madlibWords)
+    public ActionResult MadLib(IFormCollection madlibWords)
     {
-      //TODO: Model manipulation stuff from form
-      return View();
+      MadLibData data = new MadLibData(madlibWords);
+      return View(data);
     }
   }
 }
